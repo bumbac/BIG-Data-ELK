@@ -1,1 +1,5 @@
 notebook/.git
+work/queue
+work/dead_letter_queue
+work/uuid
+work/.lock
