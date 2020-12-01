@@ -52,7 +52,7 @@
             "type": "keyword"
           },
           "prejazdovaDlzka": {
-            "type": "keyword"
+            "type": "float"
           },
           "Spravca_Skratka": {
             "type": "keyword"
@@ -74,4 +74,3 @@
     "aliases": {}
   }
 }
- 

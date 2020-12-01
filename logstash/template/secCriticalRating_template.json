@@ -64,7 +64,7 @@
             "type": "date", "format": "d.M.yyyy"
           },
           "MaxUciPriemer": {
-            "type": "Integer"
+            "type": "Float"
           },
           "UciPriemer": {
             "type": "float"
@@ -76,4 +76,4 @@
     },
     "aliases": {}
   }
- 
+}
