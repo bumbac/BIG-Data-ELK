@@ -1,0 +1,109 @@
+{
+    "index_patterns": "repair",
+    "settings": {
+      "index.refresh_interval": "5s"
+    },
+    "mappings": {
+      "doc": {
+        "dynamic_templates": [
+          {
+            "string_fields": {
+              "mapping": {
+                "type": "text",
+                "omit_norms": true,
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "match_mapping_type": "string",
+              "match": "*"
+            }
+          }
+        ],
+        "properties": {
+          "TriedaCK": {
+            "type": "keyword"
+          },
+          "cisloCk": {
+            "type": "keyword"
+          },
+          "usek": {
+            "type": "keyword"
+          },
+          "pociatocnyUzol": {
+            "type": "keyword"
+          },
+          "koncovyUzol": {
+            "type": "keyword"
+          }, 
+          "UsekoveStaniceZaciatku": {
+            "type": "integer"
+          },
+          "UsekoveStanicenieKonca": {
+            "type": "integer"
+          },
+          "Krok merania / m": {
+            "type": "float"
+          },
+          "UciMax": {
+            "type": "float"
+          },
+          "UciPriem": {
+            "type": "float"
+          },
+          "Umiestnenie": {
+            "type": "keyword"
+          },
+          "TypParovania": {
+            "type": "keyword"
+          },
+          "Datum Zberu": {
+            "type": "date", "format": "d.M.yyyy"
+          },
+          "KMStanicenieZaciatku_km": {
+            "type": "float"
+          },
+          "KMStanicenieKonca_km": {
+            "type": "float"
+          },
+          "KumulStanicenieZaciatku_m": {
+            "type": "float"
+          },
+          "KumulStanicenieKonca_m": {
+            "type": "float"
+          },
+          "typMerania": {
+            "type": "keyword"
+          },
+          "TypUseku": {
+            "type": "keyword"
+          },
+          "SmerUseku": {
+            "type": "keyword"
+          },
+          "Poradie": {
+            "type": "integer"
+          },
+          "EvidencnaDlzkaUseku_m": {
+            "type": "keyword"
+          },
+          "Spravca_Skratka": {
+            "type": "keyword"
+          },
+          "Vlastnik_Skratka": {
+            "type": "keyword"
+          },
+          "Okres": {
+            "type": "keyword"
+          },
+          "Kraj": {
+            "type": "keyword"
+          }
+      }
+    },
+    "aliases": {}
+  }
+}

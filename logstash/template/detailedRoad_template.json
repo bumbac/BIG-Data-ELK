@@ -1,0 +1,77 @@
+{
+    "index_patterns": "detailedRoad",
+    "settings": {
+      "index.refresh_interval": "5s"
+    },
+    "mappings": {
+      "doc": {
+        "dynamic_templates": [
+          {
+            "string_fields": {
+              "mapping": {
+                "type": "text",
+                "omit_norms": true,
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "match_mapping_type": "string",
+              "match": "*"
+            }
+          }
+        ],
+        "properties": {
+          "usekID": {
+            "type": "integer"
+          },
+          "TriedaCK": {
+            "type": "keyword"
+          },
+          "Číslo CK": {
+            "type": "keyword"
+          },
+          "Typ úseku": {
+            "type": "keyword"
+          },
+          "Kraj": {
+            "type": "keyword"
+          },
+          "Okres": {
+            "type": "keyword"
+          }, 
+          "Dopravný smer": {
+            "type": "keyword"
+          },
+          "Funkčná klasifikácia": {
+            "type": "keyword"
+          },
+          "StavebnaKategoria": {
+            "type": "keyword"
+          },
+          "prejazdovaDlzka": {
+            "type": "keyword"
+          },
+          "Spravca_Skratka": {
+            "type": "keyword"
+          },
+          "Vlastnik_Skratka": {
+            "type": "keyword"
+          },
+          "dĺžka vozovky (m)": {
+            "type": "float"
+          },
+          "šírka vozovky": {
+            "type": "float"
+          },
+          "typKrytuVozovky": {
+            "type": "keyword"
+          }
+      }
+    },
+    "aliases": {}
+  }
+}
+ 
