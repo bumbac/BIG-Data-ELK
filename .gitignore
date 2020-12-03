@@ -7,4 +7,4 @@ work/spark-warehouse
 logstash/template/*
 save.txt
 work/plugins/*
-*/*.crc
+*/*/*.crc
