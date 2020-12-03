@@ -1,79 +1,55 @@
 {
-    "index_patterns": "secCriticalRating",
-    "settings": {
-      "index.refresh_interval": "5s"
+"index_patterns": "seccriticalrating",
+"mappings": {
+  "properties": {
+    "usekID": {
+      "type": "integer"
     },
-    "mappings": {
-      "doc": {
-        "dynamic_templates": [
-          {
-            "string_fields": {
-              "mapping": {
-                "type": "text",
-                "omit_norms": true,
-                "fields": {
-                  "keyword": {
-                    "type": "keyword",
-                    "ignore_above": 256
-                  }
-                }
-              },
-              "match_mapping_type": "string",
-              "match": "*"
-            }
-          }
-        ],
-        "properties": {
-          "usekID": {
-            "type": "integer"
-          },
-          "TriedaCK": {
-            "type": "keyword"
-          },
-          "Číslo CK": {
-            "type": "keyword"
-          },
-          "Typ úseku": {
-            "type": "keyword"
-          },
-          "Kraj": {
-            "type": "keyword"
-          },
-          "Okres": {
-            "type": "keyword"
-          }, 
-          "Dopravný smer": {
-            "type": "keyword"
-          },
-          "Funkčná klasifikácia": {
-            "type": "keyword"
-          },
-          "StavebnaKategoria": {
-            "type": "keyword"
-          },
-          "prejazdovaDlzka": {
-            "type": "keyword"
-          },
-          "Spravca_Skratka": {
-            "type": "keyword"
-          },
-          "Vlastnik_Skratka": {
-            "type": "keyword"
-          },
-          "Datum Zberu": {
-            "type": "date", "format": "d.M.yyyy"
-          },
-          "MaxUciPriemer": {
-            "type": "Float"
-          },
-          "UciPriemer": {
-            "type": "float"
-          },
-          "Rating": {
-            "type": "keyword"
-          }
-      }
+    "TriedaCK": {
+      "type": "keyword"
     },
-    "aliases": {}
+    "Číslo CK": {
+      "type": "keyword"
+    },
+    "Typ úseku": {
+      "type": "keyword"
+    },
+    "Kraj": {
+      "type": "keyword"
+    },
+    "Okres": {
+      "type": "keyword"
+    }, 
+    "Dopravný smer": {
+      "type": "keyword"
+    },
+    "Funkčná klasifikácia": {
+      "type": "keyword"
+    },
+    "StavebnaKategoria": {
+      "type": "keyword"
+    },
+    "prejazdovaDlzka": {
+      "type": "float"
+    },
+    "Spravca_Skratka": {
+      "type": "keyword"
+    },
+    "Vlastnik_Skratka": {
+      "type": "keyword"
+    },
+    "Datum Zberu": {
+      "type": "date", "format": "d.M.yyyy"
+    },
+    "MaxUciPriemer": {
+      "type": "Float"
+    },
+    "UciPriemer": {
+      "type": "float"
+    },
+    "Rating": {
+      "type": "keyword"
+    }
+    }
   }
 }
