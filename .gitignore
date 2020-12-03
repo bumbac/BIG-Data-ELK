@@ -3,3 +3,8 @@ work/queue
 work/dead_letter_queue
 work/uuid
 work/.lock
+work/spark-warehouse
+logstash/template/*
+save.txt
+work/plugins/*
+*/*.crc
