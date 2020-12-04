@@ -3,7 +3,7 @@
     {
       "text": "import org.apache.spark.sql.functions",
       "user": "anonymous",
-      "dateUpdated": "2020-12-03 13:31:33.228",
+      "dateUpdated": "2020-12-04 08:40:38.510",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -34,15 +34,15 @@
       "jobName": "paragraph_1606819436121_1625227343",
       "id": "20201201-104356_179187025",
       "dateCreated": "2020-12-01 10:43:56.121",
-      "dateStarted": "2020-12-03 13:31:33.273",
-      "dateFinished": "2020-12-03 13:31:33.488",
+      "dateStarted": "2020-12-04 08:40:38.608",
+      "dateFinished": "2020-12-04 08:40:50.803",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "val hole0 \u003d spark.read.format(\"csv\")\n  .option(\"sep\", \";\")\n  .option(\"inferSchema\", \"true\")\n  .option(\"header\", \"true\")\n  .option(\"encoding\", \"cp1250\")\n  .load(\"ptp_linescanparovane-2019.csv\")\n\nval hole \u003d hole0.withColumnRenamed(\"usek\", \"usekID\").withColumnRenamed(\"cisloCk\", \"Číslo CK\")\n  \nval sec0 \u003d spark.read.format(\"csv\")\n  .option(\"sep\", \";\")\n  .option(\"inferSchema\", \"true\")\n  .option(\"header\", \"true\")\n  .option(\"encoding\", \"cp1250\")\n  .load(\"rs_utriedeneuseky_2020-01-01.csv\")\n  \nval sec \u003d sec0.withColumnRenamed(\"Trieda cesty\", \"TriedaCK\").withColumnRenamed(\"Číslo cesty\", \"Číslo CK\").withColumnRenamed(\"ID_Useku\", \"usekID\")\n  \nval road0 \u003d spark.read.format(\"csv\")\n  .option(\"sep\", \";\")\n  .option(\"inferSchema\", \"true\")\n  .option(\"header\", \"true\")\n  .option(\"encoding\", \"cp1250\")\n  .load(\"pasportplochy_sr_2020-01-01.csv\")\n\nval road \u003d road0.withColumnRenamed(\"Trieda CK\", \"TriedaCK\").withColumnRenamed(\"úsek ID\", \"usekID\")\n\nval UCI \u003d Seq(\n        (5.0, 1, \"výborný stav\"),\n        (10.0, 2, \"veľmi dobrý stav\"),\n        (19.0, 3, \"vyhovujúci stav\"),\n        (30.0, 4, \"nevyhovujúci stav\"),\n        (1000.0, 5, \"havarijný stav\")\n    ).toDF(\"UCI\", \"Class\", \"Rating\")",
       "user": "anonymous",
-      "dateUpdated": "2020-12-03 13:31:33.573",
+      "dateUpdated": "2020-12-04 08:40:50.821",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -77,12 +77,12 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://c30c9a123428:4040/jobs/job?id\u003d13",
-            "http://c30c9a123428:4040/jobs/job?id\u003d14",
-            "http://c30c9a123428:4040/jobs/job?id\u003d15",
-            "http://c30c9a123428:4040/jobs/job?id\u003d16",
-            "http://c30c9a123428:4040/jobs/job?id\u003d17",
-            "http://c30c9a123428:4040/jobs/job?id\u003d18"
+            "http://e0de5f86d478:4040/jobs/job?id\u003d0",
+            "http://e0de5f86d478:4040/jobs/job?id\u003d1",
+            "http://e0de5f86d478:4040/jobs/job?id\u003d2",
+            "http://e0de5f86d478:4040/jobs/job?id\u003d3",
+            "http://e0de5f86d478:4040/jobs/job?id\u003d4",
+            "http://e0de5f86d478:4040/jobs/job?id\u003d5"
           ],
           "interpreterSettingId": "spark"
         }
@@ -91,15 +91,15 @@
       "jobName": "paragraph_1606727073563_-8972653",
       "id": "20201130-090433_271036724",
       "dateCreated": "2020-11-30 09:04:33.563",
-      "dateStarted": "2020-12-03 13:31:33.641",
-      "dateFinished": "2020-12-03 13:31:35.305",
+      "dateStarted": "2020-12-04 08:40:50.912",
+      "dateFinished": "2020-12-04 08:40:56.735",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "val usefulColumnsSec \u003d List(\"usekID\", \"TriedaCK\", \"Číslo CK\", \"Typ úseku\", \"Kraj\", \"Okres\", \"Dopravný smer\", \"Funkčná klasifikácia\", \"StavebnaKategoria\", \"prejazdovaDlzka\", \"Spravca_Skratka\", \"Vlastnik_Skratka\")\nval usefulColumnsRoad \u003d List(\"usekID\", \"dĺžka vozovky (m)\", \"šírka vozovky\", \"typKrytuVozovky\")\nvar usefulColumnsHole \u003d List(\"usekID\", \"UsekoveStaniceZaciatku\", \"UsekoveStanicenieKonca\", \"UciMax\", \"UciPriem\", \"DatumZberu\", \"Krok merania / m\")\nval usefulSec \u003d sec.select(usefulColumnsSec.head, usefulColumnsSec.tail: _*)\nval usefulRoad \u003d road.select(usefulColumnsRoad.head, usefulColumnsRoad.tail: _*)\nvar usefulHole \u003d hole.select(usefulColumnsHole.head, usefulColumnsHole.tail: _*).filter($\"UciPriem\" \u003e 19)",
       "user": "anonymous",
-      "dateUpdated": "2020-12-03 13:31:35.342",
+      "dateUpdated": "2020-12-04 08:40:56.820",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -132,15 +132,15 @@
       "jobName": "paragraph_1606748047727_-330072770",
       "id": "20201130-145407_622593832",
       "dateCreated": "2020-11-30 14:54:07.727",
-      "dateStarted": "2020-12-03 13:31:35.387",
-      "dateFinished": "2020-12-03 13:31:35.828",
+      "dateStarted": "2020-12-04 08:40:56.895",
+      "dateFinished": "2020-12-04 08:40:57.449",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "import org.apache.spark.sql.functions.udf\nval uciToClass \u003d (uci: Int) \u003d\u003e \n                             uci match {\n                                        case it if 0 until 5 contains it  \u003d\u003e 1\n                                        case it if 5 until 10 contains it  \u003d\u003e 2\n                                        case it if 10 until 19 contains it  \u003d\u003e 3\n                                        case it if 19 until 30 contains it  \u003d\u003e 4\n                                        case _ \u003d\u003e 5\n                                        }\n                         \n                          \nval classToRating \u003d (uciclass: Int) \u003d\u003e\n                             uciclass match {\n                                        case 1 \u003d\u003e \"výborný stav\"\n                                        case 2 \u003d\u003e \"veľmi dobrý stav\"\n                                        case 3 \u003d\u003e \"vyhovujúci stav\"\n                                        case 4 \u003d\u003e \"nevyhovujúci stav\"\n                                        case 5 \u003d\u003e \"havarijný stav\"\n                                        case _  \u003d\u003e null\n                                          }",
       "user": "anonymous",
-      "dateUpdated": "2020-12-03 13:31:35.887",
+      "dateUpdated": "2020-12-04 08:40:57.495",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -171,15 +171,15 @@
       "jobName": "paragraph_1606820383911_-232106385",
       "id": "20201201-105943_2096195260",
       "dateCreated": "2020-12-01 10:59:43.911",
-      "dateStarted": "2020-12-03 13:31:35.930",
-      "dateFinished": "2020-12-03 13:31:36.307",
+      "dateStarted": "2020-12-04 08:40:57.561",
+      "dateFinished": "2020-12-04 08:40:58.184",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "// vytvořit nový dataset, který bude agregovat data z jednoho původního datasetu\nval uciclass \u003d udf(uciToClass)\nval rating \u003d udf(classToRating)\n\nval critical \u003d usefulHole.groupBy(\"usekID\", \"DatumZberu\").agg(\n    functions.max(\"UciPriem\").as(\"MaxUciPriemer\"),\n    functions.avg(\"UciPriem\").as(\"UciPriemer\")).withColumn(\"Rating\", rating(uciclass($\"UciPriemer\"))).sort(\"DatumZberu\")\ncritical.show(1000)",
       "user": "anonymous",
-      "dateUpdated": "2020-12-03 13:31:36.330",
+      "dateUpdated": "2020-12-04 08:40:58.259",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -202,7 +202,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "+-------+----------+-------------+------------------+-----------------+\n| usekID|DatumZberu|MaxUciPriemer|        UciPriemer|           Rating|\n+-------+----------+-------------+------------------+-----------------+\n|   1394|  1.8.2019|           28|              25.0|nevyhovujúci stav|\n| 289478|  1.8.2019|           33|29.333333333333332|nevyhovujúci stav|\n| 289893|  1.8.2019|           29|              25.0|nevyhovujúci stav|\n|    829|  1.8.2019|           40|31.666666666666668|   havarijný stav|\n| 289894|  1.8.2019|           21|              21.0|nevyhovujúci stav|\n|    792|  1.8.2019|           37|              32.5|   havarijný stav|\n| 367358| 15.7.2019|           32|              32.0|   havarijný stav|\n|   1671| 15.7.2019|           38|              30.0|   havarijný stav|\n| 367359| 15.7.2019|           43|              36.0|   havarijný stav|\n|   1674| 15.7.2019|           53|              32.5|   havarijný stav|\n| 470127| 19.6.2019|           31|26.666666666666668|nevyhovujúci stav|\n|   1917| 19.6.2019|           42|              42.0|   havarijný stav|\n|   1895| 19.6.2019|           22|              22.0|nevyhovujúci stav|\n|   1969| 19.6.2019|           57|49.333333333333336|   havarijný stav|\n| 927300| 19.6.2019|           24|              24.0|nevyhovujúci stav|\n|   1998| 19.6.2019|           45|              43.0|   havarijný stav|\n|   1926| 19.6.2019|           35|              35.0|   havarijný stav|\n|   1914| 19.6.2019|           45|              38.8|   havarijný stav|\n| 367418| 19.9.2019|           60|34.526315789473685|   havarijný stav|\n| 367430| 19.9.2019|           25|              23.0|nevyhovujúci stav|\n| 369240| 19.9.2019|           27|              27.0|nevyhovujúci stav|\n| 367427| 19.9.2019|           27|              27.0|nevyhovujúci stav|\n|   7070| 19.9.2019|           45|              32.0|   havarijný stav|\n| 418515| 19.9.2019|           26|              26.0|nevyhovujúci stav|\n| 992693| 19.9.2019|           38|              32.0|   havarijný stav|\n| 367279| 19.9.2019|           34|             27.75|nevyhovujúci stav|\n| 369235| 19.9.2019|           56|              56.0|   havarijný stav|\n|   1679| 19.9.2019|           51|              51.0|   havarijný stav|\n| 418512| 19.9.2019|           21|              21.0|nevyhovujúci stav|\n| 367431| 19.9.2019|           59|29.285714285714285|nevyhovujúci stav|\n| 992694| 19.9.2019|           68|              51.5|   havarijný stav|\n| 928550| 19.9.2019|           35| 26.23076923076923|nevyhovujúci stav|\n| 418338| 19.9.2019|           52|              52.0|   havarijný stav|\n| 367423| 19.9.2019|           40|              40.0|   havarijný stav|\n| 416414| 19.9.2019|           24|              24.0|nevyhovujúci stav|\n|   9055| 19.9.2019|           24|              24.0|nevyhovujúci stav|\n| 418337| 19.9.2019|           31|              31.0|   havarijný stav|\n| 416413| 19.9.2019|           43|              43.0|   havarijný stav|\n| 416415| 19.9.2019|           24|              22.0|nevyhovujúci stav|\n| 418341| 19.9.2019|           25|              25.0|nevyhovujúci stav|\n| 367278| 19.9.2019|           21|              21.0|nevyhovujúci stav|\n| 416416| 19.9.2019|           44|              36.5|   havarijný stav|\n| 416454| 20.9.2019|           59|51.666666666666664|   havarijný stav|\n|   2108| 20.9.2019|           58|51.333333333333336|   havarijný stav|\n|   2085| 20.9.2019|           46|             34.75|   havarijný stav|\n| 418435| 20.9.2019|           65|              57.5|   havarijný stav|\n| 416388| 20.9.2019|           67|63.833333333333336|   havarijný stav|\n| 926892| 20.9.2019|           46|43.666666666666664|   havarijný stav|\n|1022238| 20.9.2019|           54|              54.0|   havarijný stav|\n| 416387| 20.9.2019|           68| 56.18181818181818|   havarijný stav|\n| 418437| 20.9.2019|           67|              53.0|   havarijný stav|\n|   9061| 20.9.2019|           51|              41.6|   havarijný stav|\n|   2208| 20.9.2019|           49|              49.0|   havarijný stav|\n| 418270| 20.9.2019|           47|              47.0|   havarijný stav|\n| 416386| 20.9.2019|           49|              49.0|   havarijný stav|\n|   1691| 20.9.2019|           22|              22.0|nevyhovujúci stav|\n|   2111| 20.9.2019|           61|46.833333333333336|   havarijný stav|\n| 418269| 20.9.2019|           47|              44.0|   havarijný stav|\n| 418268| 20.9.2019|           32|              32.0|   havarijný stav|\n| 416389| 20.9.2019|           80| 58.35294117647059|   havarijný stav|\n| 418436| 20.9.2019|           57|              57.0|   havarijný stav|\n|   2207| 20.9.2019|           61| 53.69230769230769|   havarijný stav|\n| 367361| 20.9.2019|           35|             25.75|nevyhovujúci stav|\n| 416385| 20.9.2019|           45|              45.0|   havarijný stav|\n| 926894| 20.9.2019|           37|              27.8|nevyhovujúci stav|\n| 290542| 26.8.2019|           60|              53.0|   havarijný stav|\n|    918| 26.8.2019|           62|             53.75|   havarijný stav|\n| 289954| 26.8.2019|           70|42.333333333333336|   havarijný stav|\n| 289819| 26.8.2019|           64|              64.0|   havarijný stav|\n| 289816| 26.8.2019|           67|              67.0|   havarijný stav|\n|   1436| 26.8.2019|           86| 81.66666666666667|   havarijný stav|\n| 290546| 26.8.2019|           27|              27.0|nevyhovujúci stav|\n|    832| 26.8.2019|           39|              39.0|   havarijný stav|\n| 289957| 26.8.2019|           84|              83.0|   havarijný stav|\n| 289815| 26.8.2019|           69|              69.0|   havarijný stav|\n| 289677| 26.8.2019|           72|              68.5|   havarijný stav|\n| 289956| 26.8.2019|           71|              71.0|   havarijný stav|\n|   1417| 26.8.2019|           56|             35.25|   havarijný stav|\n| 290541| 26.8.2019|           61|43.666666666666664|   havarijný stav|\n| 289814| 26.8.2019|           65|59.333333333333336|   havarijný stav|\n| 290135| 26.8.2019|           20|              20.0|nevyhovujúci stav|\n| 289823| 26.8.2019|           62|              53.0|   havarijný stav|\n| 289820| 26.8.2019|           80|            66.125|   havarijný stav|\n| 290119| 26.8.2019|           20|              20.0|nevyhovujúci stav|\n| 289483| 26.8.2019|           81| 66.54545454545455|   havarijný stav|\n|    916| 26.8.2019|           44|              44.0|   havarijný stav|\n| 289821| 26.8.2019|           80|              66.0|   havarijný stav|\n| 289955| 26.8.2019|           66|              66.0|   havarijný stav|\n|    914| 26.8.2019|           81|              71.5|   havarijný stav|\n| 289822| 26.8.2019|           66|              61.0|   havarijný stav|\n| 289674| 26.8.2019|           72|              68.0|   havarijný stav|\n|   1435| 26.8.2019|           62|              59.0|   havarijný stav|\n|   1421| 26.8.2019|           49|              47.0|   havarijný stav|\n| 367484|27.11.2019|           51|              43.6|   havarijný stav|\n|   7071|27.11.2019|           53|            40.625|   havarijný stav|\n| 418489| 4.12.2019|           25|              25.0|nevyhovujúci stav|\n|   2088| 4.12.2019|           35|             29.75|nevyhovujúci stav|\n| 418490| 4.12.2019|           45|              42.0|   havarijný stav|\n|   7074| 4.12.2019|           84| 71.53846153846153|   havarijný stav|\n| 418488| 4.12.2019|           30|              30.0|   havarijný stav|\n| 289896|  5.8.2019|           24|22.666666666666668|nevyhovujúci stav|\n|  92191|  5.9.2019|           25|              22.5|nevyhovujúci stav|\n|  92972|  5.9.2019|           24|              23.0|nevyhovujúci stav|\n|  92189|  5.9.2019|           21|              21.0|nevyhovujúci stav|\n|   2211|  6.8.2019|           67|              61.5|   havarijný stav|\n| 370752|  6.8.2019|           35|              35.0|   havarijný stav|\n|   2107|  6.8.2019|           29|              29.0|nevyhovujúci stav|\n| 369209|  6.8.2019|           63| 48.42857142857143|   havarijný stav|\n| 290102|  6.8.2019|           38|             34.75|   havarijný stav|\n| 369210|  6.8.2019|           36|              33.4|   havarijný stav|\n| 369215|  6.8.2019|           52|             48.75|   havarijný stav|\n| 369191|  6.8.2019|           36|              25.8|nevyhovujúci stav|\n| 418392|  6.8.2019|           54|              40.5|   havarijný stav|\n|   2100|  6.8.2019|           56|36.666666666666664|   havarijný stav|\n| 369212|  6.8.2019|           37|             33.75|   havarijný stav|\n| 369211|  6.8.2019|           41|              36.0|   havarijný stav|\n| 369230|  6.8.2019|           28|              24.5|nevyhovujúci stav|\n| 418299|  6.8.2019|           44|              44.0|   havarijný stav|\n| 369220|  6.8.2019|           42|              42.0|   havarijný stav|\n| 369184|  6.8.2019|           20|              20.0|nevyhovujúci stav|\n| 367506|  6.8.2019|           24|              24.0|nevyhovujúci stav|\n| 369213|  6.8.2019|           43|              43.0|   havarijný stav|\n| 369232|  6.8.2019|           21|              21.0|nevyhovujúci stav|\n|   1720|  6.8.2019|           35|              30.5|   havarijný stav|\n| 369214|  6.8.2019|           36|              36.0|   havarijný stav|\n| 369219|  6.8.2019|           32|              29.0|nevyhovujúci stav|\n|   1391|  6.8.2019|           37|34.666666666666664|   havarijný stav|\n|   1389|  6.8.2019|           34|              34.0|   havarijný stav|\n| 369180|  6.8.2019|           20|              20.0|nevyhovujúci stav|\n| 367507|  6.8.2019|           26|              24.0|nevyhovujúci stav|\n| 369225|  6.8.2019|           59|47.166666666666664|   havarijný stav|\n| 916986|  6.8.2019|           46|              45.0|   havarijný stav|\n| 369228|  6.8.2019|           20|              20.0|nevyhovujúci stav|\n| 369193|  6.8.2019|           25|              22.0|nevyhovujúci stav|\n| 369227|  6.8.2019|           37|30.666666666666668|   havarijný stav|\n|   1735|  6.8.2019|           36|              33.0|   havarijný stav|\n|   1461|  6.8.2019|           29|              29.0|nevyhovujúci stav|\n|   7226|  9.7.2019|           36|              36.0|   havarijný stav|\n+-------+----------+-------------+------------------+-----------------+\n\nuciclass: org.apache.spark.sql.expressions.UserDefinedFunction \u003d UserDefinedFunction(\u003cfunction1\u003e,IntegerType,Some(List(IntegerType)))\nrating: org.apache.spark.sql.expressions.UserDefinedFunction \u003d UserDefinedFunction(\u003cfunction1\u003e,StringType,Some(List(IntegerType)))\ncritical: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [usekID: int, DatumZberu: string ... 3 more fields]\n"
+            "data": "+-------+----------+-------------+------------------+-----------------+\n| usekID|DatumZberu|MaxUciPriemer|        UciPriemer|           Rating|\n+-------+----------+-------------+------------------+-----------------+\n| 289478|  1.8.2019|           33|29.333333333333332|nevyhovujúci stav|\n| 289893|  1.8.2019|           29|              25.0|nevyhovujúci stav|\n|    829|  1.8.2019|           40|31.666666666666668|   havarijný stav|\n|   1394|  1.8.2019|           28|              25.0|nevyhovujúci stav|\n| 289894|  1.8.2019|           21|              21.0|nevyhovujúci stav|\n|    792|  1.8.2019|           37|              32.5|   havarijný stav|\n|   1671| 15.7.2019|           38|              30.0|   havarijný stav|\n| 367358| 15.7.2019|           32|              32.0|   havarijný stav|\n| 367359| 15.7.2019|           43|              36.0|   havarijný stav|\n|   1674| 15.7.2019|           53|              32.5|   havarijný stav|\n|   1969| 19.6.2019|           57|49.333333333333336|   havarijný stav|\n|   1895| 19.6.2019|           22|              22.0|nevyhovujúci stav|\n| 927300| 19.6.2019|           24|              24.0|nevyhovujúci stav|\n| 470127| 19.6.2019|           31|26.666666666666668|nevyhovujúci stav|\n|   1998| 19.6.2019|           45|              43.0|   havarijný stav|\n|   1914| 19.6.2019|           45|              38.8|   havarijný stav|\n|   1917| 19.6.2019|           42|              42.0|   havarijný stav|\n|   1926| 19.6.2019|           35|              35.0|   havarijný stav|\n| 992693| 19.9.2019|           38|              32.0|   havarijný stav|\n| 418337| 19.9.2019|           31|              31.0|   havarijný stav|\n|   1679| 19.9.2019|           51|              51.0|   havarijný stav|\n| 369235| 19.9.2019|           56|              56.0|   havarijný stav|\n| 367279| 19.9.2019|           34|             27.75|nevyhovujúci stav|\n| 367418| 19.9.2019|           60|34.526315789473685|   havarijný stav|\n| 418515| 19.9.2019|           26|              26.0|nevyhovujúci stav|\n| 367427| 19.9.2019|           27|              27.0|nevyhovujúci stav|\n| 418512| 19.9.2019|           21|              21.0|nevyhovujúci stav|\n| 992694| 19.9.2019|           68|              51.5|   havarijný stav|\n| 367431| 19.9.2019|           59|29.285714285714285|nevyhovujúci stav|\n|   9055| 19.9.2019|           24|              24.0|nevyhovujúci stav|\n| 928550| 19.9.2019|           35| 26.23076923076923|nevyhovujúci stav|\n| 418338| 19.9.2019|           52|              52.0|   havarijný stav|\n| 367423| 19.9.2019|           40|              40.0|   havarijný stav|\n| 416413| 19.9.2019|           43|              43.0|   havarijný stav|\n| 416416| 19.9.2019|           44|              36.5|   havarijný stav|\n| 416414| 19.9.2019|           24|              24.0|nevyhovujúci stav|\n| 416415| 19.9.2019|           24|              22.0|nevyhovujúci stav|\n| 367278| 19.9.2019|           21|              21.0|nevyhovujúci stav|\n| 367430| 19.9.2019|           25|              23.0|nevyhovujúci stav|\n| 369240| 19.9.2019|           27|              27.0|nevyhovujúci stav|\n| 418341| 19.9.2019|           25|              25.0|nevyhovujúci stav|\n|   7070| 19.9.2019|           45|              32.0|   havarijný stav|\n| 367361| 20.9.2019|           35|             25.75|nevyhovujúci stav|\n|   2085| 20.9.2019|           46|             34.75|   havarijný stav|\n|   2111| 20.9.2019|           61|46.833333333333336|   havarijný stav|\n| 926892| 20.9.2019|           46|43.666666666666664|   havarijný stav|\n|   2208| 20.9.2019|           49|              49.0|   havarijný stav|\n| 416388| 20.9.2019|           67|63.833333333333336|   havarijný stav|\n|   2108| 20.9.2019|           58|51.333333333333336|   havarijný stav|\n| 418268| 20.9.2019|           32|              32.0|   havarijný stav|\n| 416385| 20.9.2019|           45|              45.0|   havarijný stav|\n| 416387| 20.9.2019|           68| 56.18181818181818|   havarijný stav|\n| 418435| 20.9.2019|           65|              57.5|   havarijný stav|\n| 418270| 20.9.2019|           47|              47.0|   havarijný stav|\n| 418437| 20.9.2019|           67|              53.0|   havarijný stav|\n|   9061| 20.9.2019|           51|              41.6|   havarijný stav|\n| 416454| 20.9.2019|           59|51.666666666666664|   havarijný stav|\n| 416386| 20.9.2019|           49|              49.0|   havarijný stav|\n| 418436| 20.9.2019|           57|              57.0|   havarijný stav|\n| 418269| 20.9.2019|           47|              44.0|   havarijný stav|\n|   1691| 20.9.2019|           22|              22.0|nevyhovujúci stav|\n| 416389| 20.9.2019|           80| 58.35294117647059|   havarijný stav|\n|   2207| 20.9.2019|           61| 53.69230769230769|   havarijný stav|\n|1022238| 20.9.2019|           54|              54.0|   havarijný stav|\n| 926894| 20.9.2019|           37|              27.8|nevyhovujúci stav|\n|   1417| 26.8.2019|           56|             35.25|   havarijný stav|\n|   1421| 26.8.2019|           49|              47.0|   havarijný stav|\n| 289821| 26.8.2019|           80|              66.0|   havarijný stav|\n| 289820| 26.8.2019|           80|            66.125|   havarijný stav|\n| 289955| 26.8.2019|           66|              66.0|   havarijný stav|\n|    832| 26.8.2019|           39|              39.0|   havarijný stav|\n| 290546| 26.8.2019|           27|              27.0|nevyhovujúci stav|\n| 290119| 26.8.2019|           20|              20.0|nevyhovujúci stav|\n| 289819| 26.8.2019|           64|              64.0|   havarijný stav|\n|   1436| 26.8.2019|           86| 81.66666666666667|   havarijný stav|\n| 289954| 26.8.2019|           70|42.333333333333336|   havarijný stav|\n|    914| 26.8.2019|           81|              71.5|   havarijný stav|\n| 290542| 26.8.2019|           60|              53.0|   havarijný stav|\n| 290541| 26.8.2019|           61|43.666666666666664|   havarijný stav|\n|   1435| 26.8.2019|           62|              59.0|   havarijný stav|\n| 290135| 26.8.2019|           20|              20.0|nevyhovujúci stav|\n|    918| 26.8.2019|           62|             53.75|   havarijný stav|\n| 289956| 26.8.2019|           71|              71.0|   havarijný stav|\n| 289674| 26.8.2019|           72|              68.0|   havarijný stav|\n| 289823| 26.8.2019|           62|              53.0|   havarijný stav|\n| 289483| 26.8.2019|           81| 66.54545454545455|   havarijný stav|\n| 289816| 26.8.2019|           67|              67.0|   havarijný stav|\n| 289815| 26.8.2019|           69|              69.0|   havarijný stav|\n|    916| 26.8.2019|           44|              44.0|   havarijný stav|\n| 289814| 26.8.2019|           65|59.333333333333336|   havarijný stav|\n| 289957| 26.8.2019|           84|              83.0|   havarijný stav|\n| 289677| 26.8.2019|           72|              68.5|   havarijný stav|\n| 289822| 26.8.2019|           66|              61.0|   havarijný stav|\n|   7071|27.11.2019|           53|            40.625|   havarijný stav|\n| 367484|27.11.2019|           51|              43.6|   havarijný stav|\n| 418489| 4.12.2019|           25|              25.0|nevyhovujúci stav|\n|   7074| 4.12.2019|           84| 71.53846153846153|   havarijný stav|\n| 418488| 4.12.2019|           30|              30.0|   havarijný stav|\n| 418490| 4.12.2019|           45|              42.0|   havarijný stav|\n|   2088| 4.12.2019|           35|             29.75|nevyhovujúci stav|\n| 289896|  5.8.2019|           24|22.666666666666668|nevyhovujúci stav|\n|  92191|  5.9.2019|           25|              22.5|nevyhovujúci stav|\n|  92189|  5.9.2019|           21|              21.0|nevyhovujúci stav|\n|  92972|  5.9.2019|           24|              23.0|nevyhovujúci stav|\n| 369211|  6.8.2019|           41|              36.0|   havarijný stav|\n|   2107|  6.8.2019|           29|              29.0|nevyhovujúci stav|\n| 369209|  6.8.2019|           63| 48.42857142857143|   havarijný stav|\n|   2211|  6.8.2019|           67|              61.5|   havarijný stav|\n| 370752|  6.8.2019|           35|              35.0|   havarijný stav|\n| 369215|  6.8.2019|           52|             48.75|   havarijný stav|\n| 369212|  6.8.2019|           37|             33.75|   havarijný stav|\n| 418392|  6.8.2019|           54|              40.5|   havarijný stav|\n| 369191|  6.8.2019|           36|              25.8|nevyhovujúci stav|\n| 369232|  6.8.2019|           21|              21.0|nevyhovujúci stav|\n| 369228|  6.8.2019|           20|              20.0|nevyhovujúci stav|\n| 290102|  6.8.2019|           38|             34.75|   havarijný stav|\n| 369230|  6.8.2019|           28|              24.5|nevyhovujúci stav|\n| 418299|  6.8.2019|           44|              44.0|   havarijný stav|\n| 369220|  6.8.2019|           42|              42.0|   havarijný stav|\n| 369184|  6.8.2019|           20|              20.0|nevyhovujúci stav|\n| 369213|  6.8.2019|           43|              43.0|   havarijný stav|\n| 369219|  6.8.2019|           32|              29.0|nevyhovujúci stav|\n| 369225|  6.8.2019|           59|47.166666666666664|   havarijný stav|\n| 369214|  6.8.2019|           36|              36.0|   havarijný stav|\n| 369210|  6.8.2019|           36|              33.4|   havarijný stav|\n| 369180|  6.8.2019|           20|              20.0|nevyhovujúci stav|\n|   1735|  6.8.2019|           36|              33.0|   havarijný stav|\n| 369227|  6.8.2019|           37|30.666666666666668|   havarijný stav|\n| 367507|  6.8.2019|           26|              24.0|nevyhovujúci stav|\n| 367506|  6.8.2019|           24|              24.0|nevyhovujúci stav|\n|   1720|  6.8.2019|           35|              30.5|   havarijný stav|\n|   2100|  6.8.2019|           56|36.666666666666664|   havarijný stav|\n| 369193|  6.8.2019|           25|              22.0|nevyhovujúci stav|\n| 916986|  6.8.2019|           46|              45.0|   havarijný stav|\n|   1461|  6.8.2019|           29|              29.0|nevyhovujúci stav|\n|   1391|  6.8.2019|           37|34.666666666666664|   havarijný stav|\n|   1389|  6.8.2019|           34|              34.0|   havarijný stav|\n|   7226|  9.7.2019|           36|              36.0|   havarijný stav|\n+-------+----------+-------------+------------------+-----------------+\n\nuciclass: org.apache.spark.sql.expressions.UserDefinedFunction \u003d UserDefinedFunction(\u003cfunction1\u003e,IntegerType,Some(List(IntegerType)))\nrating: org.apache.spark.sql.expressions.UserDefinedFunction \u003d UserDefinedFunction(\u003cfunction1\u003e,StringType,Some(List(IntegerType)))\ncritical: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [usekID: int, DatumZberu: string ... 3 more fields]\n"
           }
         ]
       },
@@ -213,7 +213,7 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://c30c9a123428:4040/jobs/job?id\u003d19"
+            "http://e0de5f86d478:4040/jobs/job?id\u003d6"
           ],
           "interpreterSettingId": "spark"
         }
@@ -222,15 +222,15 @@
       "jobName": "paragraph_1606819116606_-1915142798",
       "id": "20201201-103836_1739995779",
       "dateCreated": "2020-12-01 10:38:36.606",
-      "dateStarted": "2020-12-03 13:31:36.406",
-      "dateFinished": "2020-12-03 13:31:37.676",
+      "dateStarted": "2020-12-04 08:40:58.326",
+      "dateFinished": "2020-12-04 08:41:01.005",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "//vytvořit nový dataset, který bude agregovat data ze dvou původních datasetů najednou\nval detailedRoad \u003d usefulSec.join(usefulRoad, usingColumns\u003dSeq(\"usekID\"), joinType \u003d \"right\")\ndetailedRoad.show()",
       "user": "anonymous",
-      "dateUpdated": "2020-12-03 13:31:37.711",
+      "dateUpdated": "2020-12-04 08:41:01.032",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -264,7 +264,7 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://c30c9a123428:4040/jobs/job?id\u003d20"
+            "http://e0de5f86d478:4040/jobs/job?id\u003d7"
           ],
           "interpreterSettingId": "spark"
         }
@@ -273,15 +273,15 @@
       "jobName": "paragraph_1606819232102_-384063125",
       "id": "20201201-104032_1302110137",
       "dateCreated": "2020-12-01 10:40:32.102",
-      "dateStarted": "2020-12-03 13:31:37.784",
-      "dateFinished": "2020-12-03 13:31:39.404",
+      "dateStarted": "2020-12-04 08:41:01.151",
+      "dateFinished": "2020-12-04 08:41:03.271",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "// vytvořit nový dataset, který bude agregovat data ze dvou datasetů najednou, z čehož jeden bude výsledkem předchozí agregace (critical)\nval secCriticalRating \u003d usefulSec.join(critical, usingColumns\u003dSeq(\"usekID\"), joinType \u003d \"right\")\nsecCriticalRating.show()",
       "user": "anonymous",
-      "dateUpdated": "2020-12-03 13:31:39.486",
+      "dateUpdated": "2020-12-04 08:41:03.350",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -315,11 +315,11 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://c30c9a123428:4040/jobs/job?id\u003d21",
-            "http://c30c9a123428:4040/jobs/job?id\u003d22",
-            "http://c30c9a123428:4040/jobs/job?id\u003d23",
-            "http://c30c9a123428:4040/jobs/job?id\u003d24",
-            "http://c30c9a123428:4040/jobs/job?id\u003d25"
+            "http://e0de5f86d478:4040/jobs/job?id\u003d8",
+            "http://e0de5f86d478:4040/jobs/job?id\u003d9",
+            "http://e0de5f86d478:4040/jobs/job?id\u003d10",
+            "http://e0de5f86d478:4040/jobs/job?id\u003d11",
+            "http://e0de5f86d478:4040/jobs/job?id\u003d12"
           ],
           "interpreterSettingId": "spark"
         }
@@ -328,15 +328,15 @@
       "jobName": "paragraph_1606819633807_-192966610",
       "id": "20201201-104713_1093510427",
       "dateCreated": "2020-12-01 10:47:13.807",
-      "dateStarted": "2020-12-03 13:31:39.526",
-      "dateFinished": "2020-12-03 13:31:41.905",
+      "dateStarted": "2020-12-04 08:41:03.400",
+      "dateFinished": "2020-12-04 08:41:06.131",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "secCriticalRating.repartition(1).write\n.format(\"csv\")\n.option(\"sep\",\";\")\n.option(\"header\",\"true\")\n.save(\"secCriticalRating\")\ndetailedRoad.repartition(1).write\n.format(\"csv\")\n.option(\"sep\",\";\")\n.option(\"header\",\"true\")\n.save(\"detailedRoad\")",
+      "text": "secCriticalRating.repartition(1).write\n.format(\"csv\")\n.option(\"sep\",\";\")\n.option(\"header\",\"false\")\n.save(\"secCriticalRating\")\ndetailedRoad.repartition(1).write\n.format(\"csv\")\n.option(\"sep\",\";\")\n.option(\"header\",\"false\")\n.save(\"detailedRoad\")",
       "user": "anonymous",
-      "dateUpdated": "2020-12-03 13:36:54.889",
+      "dateUpdated": "2020-12-04 08:41:57.924",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -365,9 +365,9 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://c30c9a123428:4040/jobs/job?id\u003d26",
-            "http://c30c9a123428:4040/jobs/job?id\u003d27",
-            "http://c30c9a123428:4040/jobs/job?id\u003d28"
+            "http://e0de5f86d478:4040/jobs/job?id\u003d13",
+            "http://e0de5f86d478:4040/jobs/job?id\u003d14",
+            "http://e0de5f86d478:4040/jobs/job?id\u003d15"
           ],
           "interpreterSettingId": "spark"
         }
@@ -376,15 +376,15 @@
       "jobName": "paragraph_1606820047334_1745168194",
       "id": "20201201-105407_452540168",
       "dateCreated": "2020-12-01 10:54:07.334",
-      "dateStarted": "2020-12-03 13:36:54.934",
-      "dateFinished": "2020-12-03 13:37:00.755",
+      "dateStarted": "2020-12-04 08:41:57.971",
+      "dateFinished": "2020-12-04 08:42:04.021",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "",
+      "text": "hole.select(\"UciPriem\").distinct().show()",
       "user": "anonymous",
-      "dateUpdated": "2020-12-01 11:45:12.466",
+      "dateUpdated": "2020-12-04 09:03:51.692",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -402,15 +402,54 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+\n|UciPriem|\n+--------+\n|    26,2|\n|    41,5|\n|    77,8|\n|    37,8|\n|    77,4|\n|    12,9|\n|    32,7|\n|    36,6|\n|    56,8|\n|    77,3|\n|       7|\n|      51|\n|    65,1|\n|    52,5|\n|    70,5|\n|     4,3|\n|    73,9|\n|    82,3|\n|    83,7|\n|    74,5|\n+--------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://e0de5f86d478:4040/jobs/job?id\u003d33",
+            "http://e0de5f86d478:4040/jobs/job?id\u003d34",
+            "http://e0de5f86d478:4040/jobs/job?id\u003d35"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
       "apps": [],
       "jobName": "paragraph_1606822687296_2100932865",
       "id": "20201201-113807_1493718313",
       "dateCreated": "2020-12-01 11:38:07.296",
+      "dateStarted": "2020-12-04 09:03:51.730",
+      "dateFinished": "2020-12-04 09:03:52.182",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1607072493949_-1997549427",
+      "id": "20201204-090133_1983908760",
+      "dateCreated": "2020-12-04 09:01:33.949",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "Pothole repairs in Slovakia",
+  "name": "Pothole repairs in West Slovakia",
   "id": "2FS3RCH48",
   "noteParams": {},
   "noteForms": {},
