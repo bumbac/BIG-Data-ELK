@@ -1,0 +1,183 @@
+[
+  {
+    "_id": "979d2670-3634-11eb-94ed-89540a71d2da",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Overview of counties",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":6,\"h\":3,\"i\":\"1\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"7c2d1260-3634-11eb-94ed-89540a71d2da\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":6,\"y\":0,\"w\":6,\"h\":3,\"i\":\"2\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"428ae410-3634-11eb-94ed-89540a71d2da\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":0,\"y\":3,\"w\":6,\"h\":3,\"i\":\"3\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"5d7cee80-3634-11eb-94ed-89540a71d2da\"},{\"gridData\":{\"w\":6,\"h\":3,\"x\":6,\"y\":3,\"i\":\"4\"},\"version\":\"6.2.4\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"id\":\"8d263180-3631-11eb-94ed-89540a71d2da\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true,\"hidePanelTitles\":false}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "46d83010-3632-11eb-94ed-89540a71d2da",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Overview for Western Slovakia",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":6,\"h\":3,\"i\":\"1\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"1b0483f0-3626-11eb-94ed-89540a71d2da\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":0,\"y\":3,\"w\":6,\"h\":3,\"i\":\"3\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"24c46ed0-3632-11eb-94ed-89540a71d2da\"},{\"panelIndex\":\"4\",\"gridData\":{\"x\":6,\"y\":0,\"w\":6,\"h\":3,\"i\":\"4\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"68f9e190-3612-11eb-b484-fd29a855eed6\"},{\"panelIndex\":\"5\",\"gridData\":{\"x\":6,\"y\":3,\"w\":6,\"h\":3,\"i\":\"5\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"4e7a3da0-3636-11eb-94ed-89540a71d2da\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true,\"hidePanelTitles\":false}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-15m",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "68f9e190-3612-11eb-b484-fd29a855eed6",
+    "_type": "visualization",
+    "_source": {
+      "title": "Poškodené cesty podľa správcu ciest",
+      "visState": "{\"title\":\"Poškodené cesty podľa správcu ciest\",\"type\":\"heatmap\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"colorSchema\":\"Green to Red\",\"colorsNumber\":10,\"colorsRange\":[],\"enableHover\":false,\"invertColors\":false,\"legendPosition\":\"right\",\"percentageMode\":false,\"setColorRange\":false,\"times\":[],\"type\":\"heatmap\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"color\":\"#555\",\"rotate\":270,\"show\":true},\"scale\":{\"defaultYExtents\":true,\"type\":\"square root\"},\"show\":false,\"type\":\"value\"}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Spravca_Skratka.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Správca ciest\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"range\",\"schema\":\"group\",\"params\":{\"field\":\"UciPriem\",\"ranges\":[{\"from\":0,\"to\":5},{\"from\":6,\"to\":20},{\"from\":21,\"to\":30},{\"from\":31,\"to\":1000}],\"customLabel\":\"Priemerné poškodenie, vyššie je horšie\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 706\":\"rgb(0,104,55)\",\"706 - 1,411\":\"rgb(26,151,80)\",\"1,411 - 2,117\":\"rgb(102,189,99)\",\"2,117 - 2,822\":\"rgb(166,217,106)\",\"2,822 - 3,528\":\"rgb(217,239,139)\",\"3,528 - 4,233\":\"rgb(255,255,190)\",\"4,233 - 4,939\":\"rgb(254,224,139)\",\"4,939 - 5,644\":\"rgb(253,174,97)\",\"5,644 - 6,350\":\"rgb(244,109,67)\",\"6,350 - 7,055\":\"rgb(214,47,39)\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a6e82ac0-360d-11eb-b484-fd29a855eed6\",\"filter\":[],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "5d7cee80-3634-11eb-94ed-89540a71d2da",
+    "_type": "visualization",
+    "_source": {
+      "title": "Najviac poškodení na CK v Trnavskom kraji",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{\"customLabel\":\"Počet detekovaných poškodení\"},\"schema\":\"metric\",\"type\":\"count\"},{\"enabled\":true,\"id\":\"3\",\"params\":{\"field\":\"Kraj.keyword\",\"include\":\"Trnavsk� kraj\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"size\":5},\"schema\":\"group\",\"type\":\"terms\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"customLabel\":\"Číslo CK\",\"field\":\"cisloCk\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"order\":\"desc\",\"orderBy\":\"_term\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"size\":9},\"schema\":\"segment\",\"type\":\"terms\"}],\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":200},\"position\":\"left\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"legendPosition\":\"right\",\"orderBucketsBySum\":true,\"radiusRatio\":87,\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Počet detekovaných poškodení\"},\"drawLinesBetweenPoints\":true,\"mode\":\"normal\",\"show\":true,\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":true,\"rotate\":75,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"bottom\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Počet detekovaných poškodení\"},\"type\":\"value\"}]},\"title\":\"Najviac poškodení na CK v Trnavskom kraji\",\"type\":\"horizontal_bar\"}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":false}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a6e82ac0-360d-11eb-b484-fd29a855eed6\",\"filter\":[],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "428ae410-3634-11eb-94ed-89540a71d2da",
+    "_type": "visualization",
+    "_source": {
+      "title": "Najviac poškodení na CK v Nitrianskom kraji",
+      "visState": "{\"title\":\"Najviac poškodení na CK v Nitrianskom kraji\",\"type\":\"horizontal_bar\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":200},\"position\":\"left\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"legendPosition\":\"right\",\"orderBucketsBySum\":true,\"radiusRatio\":87,\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Počet detekovaných poškodení\"},\"drawLinesBetweenPoints\":true,\"mode\":\"normal\",\"show\":true,\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":true,\"rotate\":75,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"bottom\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Počet detekovaných poškodení\"},\"type\":\"value\"}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Počet detekovaných poškodení\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"Kraj.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"include\":\"Nitriansky kraj\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"cisloCk\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"_term\",\"customLabel\":\"Číslo CK\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a6e82ac0-360d-11eb-b484-fd29a855eed6\",\"filter\":[],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "8d263180-3631-11eb-94ed-89540a71d2da",
+    "_type": "visualization",
+    "_source": {
+      "title": "Najviac poškodení na CK",
+      "visState": "{\"title\":\"Najviac poškodení na CK\",\"type\":\"horizontal_bar\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":200},\"position\":\"left\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"legendPosition\":\"right\",\"orderBucketsBySum\":true,\"radiusRatio\":87,\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Počet detekovaných poškodení\"},\"drawLinesBetweenPoints\":true,\"mode\":\"normal\",\"show\":true,\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":true,\"rotate\":75,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"bottom\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Počet detekovaných poškodení\"},\"type\":\"value\"}]},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"cisloCk\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"_term\",\"customLabel\":\"Číslo CK\"}},{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Počet detekovaných poškodení\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a6e82ac0-360d-11eb-b484-fd29a855eed6\",\"filter\":[],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "1b0483f0-3626-11eb-94ed-89540a71d2da",
+    "_type": "visualization",
+    "_source": {
+      "title": "Priemerné poškodenie ciest počas roku",
+      "visState": "{\"title\":\"Priemerné poškodenie ciest počas roku\",\"type\":\"area\",\"params\":{\"type\":\"area\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Priemerná hodnota poškodania cesty UCI\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"area\",\"mode\":\"stacked\",\"data\":{\"label\":\"Priemerná hodnota poškodania cesty UCI\",\"id\":\"1\"},\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"linear\",\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"UciPriem\",\"customLabel\":\"Priemerná hodnota poškodania cesty UCI\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Mesiace v r. 2019\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a6e82ac0-360d-11eb-b484-fd29a855eed6\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "24c46ed0-3632-11eb-94ed-89540a71d2da",
+    "_type": "visualization",
+    "_source": {
+      "title": "Pomer CK v krajoch podľa klasifikácie",
+      "visState": "{\"title\":\"Pomer CK v krajoch podľa klasifikácie\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":false,\"labels\":{\"show\":true,\"values\":true,\"last_level\":false,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Funkcna klasifikacia.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"klas\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Kraj.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":8,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a6e82ac0-360d-11eb-b484-fd29a855eed6\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "7c2d1260-3634-11eb-94ed-89540a71d2da",
+    "_type": "visualization",
+    "_source": {
+      "title": "Najviac poškodení na CK v Bratislavskom kraji",
+      "visState": "{\"title\":\"Najviac poškodení na CK v Bratislavskom kraji\",\"type\":\"horizontal_bar\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":200},\"position\":\"left\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"legendPosition\":\"right\",\"orderBucketsBySum\":true,\"radiusRatio\":87,\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Počet detekovaných poškodení\"},\"drawLinesBetweenPoints\":true,\"mode\":\"normal\",\"show\":true,\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":true,\"rotate\":75,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"bottom\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Počet detekovaných poškodení\"},\"type\":\"value\"}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Počet detekovaných poškodení\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"Kraj.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"include\":\"Bratislavsk� kraj\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"cisloCk\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"_term\",\"customLabel\":\"Číslo CK\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":false}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a6e82ac0-360d-11eb-b484-fd29a855eed6\",\"filter\":[],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "4e7a3da0-3636-11eb-94ed-89540a71d2da",
+    "_type": "visualization",
+    "_source": {
+      "title": "Dlžka",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{\"customLabel\":\"Počet\"},\"schema\":\"metric\",\"type\":\"count\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"customLabel\":\"Prejazdová dĺžka CK\",\"extended_bounds\":{},\"field\":\"prejazdovaDlzka\",\"interval\":100,\"min_doc_count\":false},\"schema\":\"segment\",\"type\":\"histogram\"}],\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"legendPosition\":\"right\",\"orderBucketsBySum\":true,\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Počet\"},\"drawLinesBetweenPoints\":true,\"mode\":\"normal\",\"show\":\"true\",\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"times\":[],\"type\":\"line\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Počet\"},\"type\":\"value\"}]},\"title\":\"Dlžka\",\"type\":\"line\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a6e82ac0-360d-11eb-b484-fd29a855eed6\",\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"a6e82ac0-360d-11eb-b484-fd29a855eed6\",\"key\":\"prejazdovaDlzka\",\"negate\":false,\"params\":{\"gte\":300,\"lt\":2400},\"type\":\"range\",\"value\":\"300 to 2,400\"},\"range\":{\"prejazdovaDlzka\":{\"gte\":300,\"lt\":2400}}}],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  }
+]
