@@ -1,4 +1,3 @@
-
 Clone this repository to your project path.
 
 Download datafiles to "your project path"/work.
@@ -17,7 +16,7 @@ After all containers are up:
 1. Access zeppelin notebook @ http://localhost:8088/
 2. Run all paragraphs
 2. Access Kibana @ http://127.0.0.1:5601/
-3. create index from global
+3. Create index from global
 3. Import dasboard and visuals from "your project path"/kibana/export
 
 
